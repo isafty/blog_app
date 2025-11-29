@@ -11,42 +11,46 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Sign Up.',
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 30),
-            AuthField(hintText: 'Name'),
-            const SizedBox(height: 15),
-            AuthField(hintText: 'Email'),
-            const SizedBox(height: 15),
-            AuthField(hintText: 'Password'),
-            const SizedBox(height: 15),
-            AuthGradientButton(onPressed: () {}, text: 'Sign Up'),
-            const SizedBox(height: 15),
-            RichText(
-              text: TextSpan(
-                text: 'Already have an account? ',
-                style: Theme.of(context).textTheme.bodyMedium,
-                children: [
-                  TextSpan(
-                    text: 'Sign In',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: AppPalette.gradient1,
-                    ),
-                  ),
-                ],
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Sign Up.',
+                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
               ),
-            ),
-          ],
+              const SizedBox(height: 30),
+              AuthField(hintText: 'Name'),
+              const SizedBox(height: 15),
+              AuthField(hintText: 'Email'),
+              const SizedBox(height: 15),
+              AuthField(hintText: 'Password'),
+              const SizedBox(height: 15),
+              AuthGradientButton(onPressed: () {}, text: 'Sign Up'),
+              const SizedBox(height: 15),
+              RichText(
+                text: TextSpan(
+                  text: 'Already have an account? ',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  children: [
+                    TextSpan(
+                      text: 'Sign In',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppPalette.gradient1,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
