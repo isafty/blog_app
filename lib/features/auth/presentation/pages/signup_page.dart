@@ -4,6 +4,7 @@ import 'package:blog_app/features/auth/presentation/widgets/auth_gradient_button
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
+  static route() => MaterialPageRoute(builder: (context) => const SignUpPage());
   const SignUpPage({super.key});
 
   @override
@@ -28,6 +29,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Form(
@@ -54,18 +56,22 @@ class _SignUpPageState extends State<SignUpPage> {
                 const SizedBox(height: 15),
                 AuthGradientButton(onPressed: () {}, text: 'Sign Up'),
                 const SizedBox(height: 15),
-                RichText(
-                  text: TextSpan(
-                    text: 'Already have an account? ',
-                    style: Theme.of(context).textTheme.bodyMedium,
-                    children: [
-                      TextSpan(
-                        text: 'Sign In',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: AppPalette.gradient1,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'Already have an account? ',
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      children: [
+                        TextSpan(
+                          text: 'Sign In',
+                          style: Theme.of(context).textTheme.bodyMedium
+                              ?.copyWith(color: AppPalette.gradient1),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],

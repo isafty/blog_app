@@ -1,9 +1,11 @@
 import 'package:blog_app/core/theme/app_palette.dart';
+import 'package:blog_app/features/auth/presentation/pages/signup_page.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_field.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
+  static route() => MaterialPageRoute(builder: (context) => const SignInPage());
   const SignInPage({super.key});
 
   @override
@@ -50,18 +52,22 @@ class _SignInPageState extends State<SignInPage> {
                 const SizedBox(height: 15),
                 AuthGradientButton(onPressed: () {}, text: 'Sign In'),
                 const SizedBox(height: 15),
-                RichText(
-                  text: TextSpan(
-                    text: 'Don\'t have an account? ',
-                    style: Theme.of(context).textTheme.bodyMedium,
-                    children: [
-                      TextSpan(
-                        text: 'Sign Up',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: AppPalette.gradient1,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, SignUpPage.route());
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'Don\'t have an account? ',
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      children: [
+                        TextSpan(
+                          text: 'Sign Up',
+                          style: Theme.of(context).textTheme.bodyMedium
+                              ?.copyWith(color: AppPalette.gradient1),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
