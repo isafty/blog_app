@@ -1,3 +1,4 @@
+import 'package:blog_app/core/theme/app_palette.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_field.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,21 @@ class _SignUpPageState extends State<SignUpPage> {
             AuthField(hintText: 'Password'),
             const SizedBox(height: 15),
             AuthGradientButton(onPressed: () {}, text: 'Sign Up'),
+            const SizedBox(height: 15),
+            RichText(
+              text: TextSpan(
+                text: 'Already have an account? ',
+                style: Theme.of(context).textTheme.bodyMedium,
+                children: [
+                  TextSpan(
+                    text: 'Sign In',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: AppPalette.gradient1,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
