@@ -11,6 +11,12 @@ class AuthField extends StatelessWidget {
         hintText: hintText,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return '$hintText is required';
+        }
+        return null;
+      },
     );
   }
 }
