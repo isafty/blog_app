@@ -25,6 +25,7 @@ class AuthField extends StatelessWidget {
         return null;
       },
       controller: controller,
+      obscureText: isObscure,
     );
   }
 }
