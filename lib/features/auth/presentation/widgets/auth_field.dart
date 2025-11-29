@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 class AuthField extends StatelessWidget {
   final String hintText;
-  const AuthField({super.key, required this.hintText});
+  final TextEditingController controller;
+  const AuthField({
+    super.key,
+    required this.hintText,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +22,7 @@ class AuthField extends StatelessWidget {
         }
         return null;
       },
+      controller: controller,
     );
   }
 }
