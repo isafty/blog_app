@@ -40,5 +40,10 @@ add main.dart --> theme: AppTheme.darkTheme,
 ...
 **_border([Color color = AppPalette.borderColor])** add default value between []
 
-...
-
+## Auth Repository
+1. make auth_repository.dart (auth/domain/repository/auth_repository.dart)
+abstract interface class AuthRepository {}
+2. add fpdart package to use either (sucess or falier ) return type
+3. add failure.dart (core/error/failures.dart)
+4. Future<Either<Failure, String>> future get data from internet
+## Signin Supabase create project and add supabase package
