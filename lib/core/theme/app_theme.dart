@@ -10,6 +10,7 @@ class AppTheme {
 
   static final ThemeData darkTheme = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: AppPalette.backgroundColor,
+    appBarTheme: const AppBarTheme(backgroundColor: AppPalette.backgroundColor),
     // input decoration theme for textformfield
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(27),
